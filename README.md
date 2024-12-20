@@ -1,5 +1,6 @@
 # Feffold
 Steps done to create this app are described in this readme
+
 ## Create vite react app
 >Run `npm` command
 ```sh
@@ -93,6 +94,23 @@ index a0f76fa..e5c750c 100644
 +    "preview": "vite preview",
 +    "test": "vitest run --no-isolate",
 +    "test:ui": "vitest --ui --no-isolate"
+```
+## Setup Commitlint & Husky
+> Run `npm` command
+```sh
+npm install -D @commitlint/{config-conventional,cli} husky
+```
+> Create `commitlint.config.js`
+```js
+export default { extends: ['@commitlint/config-conventional'] };
+```
+> Run `npx` command
+```sh
+npx husky-init && npm i
+```
+> Run `npx` command
+```sh
+npx husky add .husky/commit-msg "npx --no -- commitlint --edit '$1'"
 ```
 
 
