@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "vitest run --no-isolate",
     "test:ui": "vitest --ui --no-isolate",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -31,11 +32,15 @@
     "@vitest/ui": "^2.1.8",
     "esbuild": "^0.24.0",
     "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.13.0",
     "husky": "^8.0.0",
     "jsdom": "^25.0.1",
+    "prettier": "^3.4.2",
+    "pretty-quick": "^4.0.0",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.18.1",
     "vite": "^6.0.3",
