@@ -2,7 +2,7 @@
 
 Steps done to create this app are described in this readme
 
-## Create Vite React app
+## Vite React App
 
 > Run `npm` command
 
@@ -10,7 +10,7 @@ Steps done to create this app are described in this readme
 npm create vite@latest
 ```
 
-## Setup Vitest
+## Vitest
 
 > Run `npm` command
 
@@ -112,7 +112,7 @@ index a0f76fa..e5c750c 100644
 +    "test:ui": "vitest --ui --no-isolate"
 ```
 
-## Setup Commitlint & Husky
+## Commitlint
 
 > Run `npm` command
 
@@ -138,7 +138,7 @@ npx husky-init && npm i
 npx husky add .husky/commit-msg "npx --no -- commitlint --edit '$1'"
 ```
 
-## Setup Prettier
+## Prettier
 
 > Run `npm` command
 
@@ -216,3 +216,40 @@ index 1806a15..278501c 100644
 +    "prettier": "^3.4.2",
 +    "pretty-quick": "^4.0.0",
 ```
+
+## Playwright
+
+> Run `npm` command
+
+```sh
+npm init playwright@latest
+```
+
+> Update `vite.config.ts`
+
+```diff
+diff --git a/vite.config.ts b/vite.config.ts
+index 2dfa260..311308e 100644
+--- a/vite.config.ts
++++ b/vite.config.ts
+@@ -11,6 +11,15 @@ const vitestConfig = defineVitestConfig({
+   test: {
+     globals: true,
+     environment: 'jsdom',
++    include: ['**/*.spec.ts', '**/*.spec.tsx'],
++    exclude: [
++      '.automation',
++      'node_modules',
++      'src/main.tsx',
++      'src/stories/**/*',
++      'src/**/*index.ts',
++      'src/vite-env.d.ts',
++    ],
+     setupFiles: './vitest.setup.ts',
+   },
+ });
+```
+
+## Storybook
+
+## Tailwind
