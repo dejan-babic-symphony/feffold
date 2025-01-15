@@ -253,3 +253,49 @@ index 2dfa260..311308e 100644
 ## Storybook
 
 ## Tailwind
+
+> Run `npm` command
+
+```sh
+npm install -D tailwindcss postcss autoprefixer
+```
+
+> Create `tailwind.config.js`
+
+```js
+/** @type {import('tailwindcss').Config} */
+export default {
+  mode: 'jit',
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
+
+> Create `postcss.config.js`
+
+```js
+// postcss.config.mjs
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+```
+
+Update `src/index.css`
+
+```diff
+diff --git a/src/index.css b/src/index.css
+index 1545f2e..d48ab1b 100644
+--- a/src/index.css
++++ b/src/index.css
+@@ -0,0 +1,4 @@
++@tailwind base;
++@tailwind components;
++@tailwind utilities;
++
+```
