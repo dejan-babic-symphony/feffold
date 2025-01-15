@@ -13,7 +13,7 @@ const vitestConfig = defineVitestConfig({
     environment: 'jsdom',
     include: ['**/*.spec.ts', '**/*.spec.tsx'],
     exclude: [
-      '.automation',
+      'automation',
       'node_modules',
       'src/main.tsx',
       'src/stories/**/*',
