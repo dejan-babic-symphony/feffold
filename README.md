@@ -1,6 +1,20 @@
-# Feffold Setup
+# Feffold
 
-Steps done to create this app are described in this readme
+To use this scaffold as a starting point of a front-end project run
+
+```sh
+npx degit dejan-babic-symphony/feffold your-project-name
+```
+
+This will make a copy of the project with a fresh git history, so all that needs to be done to get things going is
+
+```sh
+npm i && npm run dev
+```
+
+# Feffold stack
+
+Steps done to create this app are described bellow
 
 ## Vite React App
 
@@ -251,6 +265,58 @@ index 2dfa260..311308e 100644
 ```
 
 ## Storybook
+
+> Run `npx` command
+
+```sh
+npx storybook@latest init
+```
+
+> Run `npm` command
+
+```sh
+npm i -D @storybook/types
+```
+
+> Update `tsconfig.app.json`
+
+```diff
+diff --git a/tsconfig.app.json b/tsconfig.app.json
+index 06e8b8a..e5a40bb 100644
+--- a/tsconfig.app.json
++++ b/tsconfig.app.json
+@@ -9 +9 @@
+-    "types": ["vitest/globals", "node", "jest", "@testing-library/jest-dom"],
++    "types": ["vitest/globals", "node", "jest", "@testing-library/jest-dom", "@storybook/types"],
+```
+
+> Create `.storybook/preview-head.html`
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+  rel="stylesheet"
+/>
+```
+
+> Create `.storybook/preview.css`
+
+```css
+@import '../src/index.css';
+```
+
+> Update `.storybook/preview.ts`
+
+```diff
+diff --git a/.storybook/preview.ts b/.storybook/preview.ts
+index adcda96..fe62c5c 100644
+--- a/.storybook/preview.ts
++++ b/.storybook/preview.ts
+@@ -1,0 +2 @@ import type { Preview } from '@storybook/react';
++import './preview.css';
+```
 
 ## Tailwind
 
