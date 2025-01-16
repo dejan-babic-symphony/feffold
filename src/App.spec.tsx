@@ -2,8 +2,8 @@ import { render, screen } from '@testing-library/react';
 import { App } from './App';
 
 describe('App', () => {
-  it('renders the App text', () => {
+  it('renders the Feffold text', () => {
     render(<App />);
-    expect(screen.getByText('App')).toBeInTheDocument();
+    expect(screen.getByText('Feffold')).toBeInTheDocument();
   });
 });
